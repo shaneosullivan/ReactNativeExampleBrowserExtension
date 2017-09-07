@@ -16,7 +16,9 @@ of React Native so could be a bit out of date.
    ![Add Target](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/1a%20-%20Add%20New%20Target.png?raw=true)
 4. Choose `Action Extension` to create the extension
   ![Choose Action Extensions](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/1b%20-%20Choose%20Action%20Extension.png)
-  Make sure to choose Objective-C as the language.
+  Make sure to choose Objective-C as the language, and leave the default selection
+  for `Action Type` to be `Presents User Interface`. For this example we will
+  be showing a UI built with React Native when the extension is activated.
   ![Choose Objective C](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/1c%20-%20Choose%20Objective-C.png)
   If you see a prompt to `Activate "My Example Extension" scheme`, click the `Activate` button.
   ![Activate Scheme](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/1d%20-%20Activate%20Scheme.png)
