@@ -16,15 +16,13 @@ export default class ReactNativeExampleBrowserExtension extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        Text style={styles.welcome}>Welcome to ReactNativeExampleBrowserExtension!</Text>
+        <Text style={styles.instructions}>
+          This app shows how to create a browser extension using React Native
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
+          Ignore Android for now, all initial work is on iOS.  We'll get to
+          Android when iOS works.
         </Text>
       </View>
     );
