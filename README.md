@@ -44,4 +44,4 @@ all of the libraries you saw in the main app config.
   Scroll down to find the `Other Linker Flags` property, and double click on the row (do not expand it).  This pops up a dialog, where you should click the `+` icon.
   ![Add Linker Flags](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2d%20-%20Add%20Linker%20Flags.png)
   Add `-ObjC` and `-lc++` to this dialog.
-  ![After Linker Flags](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2d%20-%20After%20Linker%20Flags.png)
+  ![After Linker Flags](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2e%20-%20After%20Linker%20Flags.png)
