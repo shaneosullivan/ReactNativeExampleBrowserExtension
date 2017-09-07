@@ -40,3 +40,8 @@ all of the libraries you saw in the main app config.
   ![Create Libraries](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2b%20-%20Add%20New%20Libraries.png)
   It should look like this when done
   ![After Creating Libraries](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2c%20-%20After%20Adding%20New%20Libraries.png)
+8. In order for the project to compile properly (compilation, remember that headache from the 90's? Yeah, well welcome back to it :-( ), we'll add some "linker flags".  Select your extension's target in the project settings again, in this case `My Example Extension`.  Click the `Build Settings` tab, and make sure to click the `All` button just below the tabs, otherwise XCode will helpfully hide the property you need to set.  
+  Scroll down to find the `Other Linker Flags` property, and double click on the row (do not expand it).  This pops up a dialog, where you should click the `+` icon.
+  ![Add Linker Flags](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2d%20-%20Add%20Linker%20Flags.png)
+  Add `-ObjC` and `-lc++` to this dialog.
+  ![After Linker Flags](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/2d%20-%20After%20Linker%20Flags.png)
