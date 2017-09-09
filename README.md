@@ -9,7 +9,7 @@ of React Native so could be a bit out of date.
 ## Instructions for iOS (work in progress)
 1. Create a React Native app, e.g.
   `react-native init MyReactNativeExampleBrowserExtension`
-  This should create a folder called MyReactNativeExampleBrowserExtension in
+  This should create a folder called MyReactNativeExampleBrowserExtension.
 2. Open the iOS app in XCode, using the file `MyReactNativeExampleBrowserExtension/ios/MyReactNativeExampleBrowserExtension.xcodeproj`
 
 ### Creating the Extension
