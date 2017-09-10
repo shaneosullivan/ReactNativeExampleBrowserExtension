@@ -6,7 +6,7 @@ instructions published by PromptWorks at https://www.promptworks.com/blog/buildi
 , which did a bit less than we're aiming for here, and were for an earlier version
 of React Native so could be a bit out of date.
 
-### Note that the current state is broken for some Objective-C chicanery. I'm working on figuring it out. 
+### Note that the current state is broken for some Objective-C chicanery. I'm working on figuring it out.
 
 ## Instructions for iOS (work in progress)
 1. Create a React Native app, e.g.
@@ -236,5 +236,4 @@ RCT_EXPORT_METHOD(done) {
 ```
 ![Select target](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/4b%20-%20Add%20targets.png)
 
-### Note that at this point the project is broken and will fail to compile. I'm working on
-figuring out why.
+### Note that at this point the project is broken and will fail to compile. I'm working on figuring out why.
