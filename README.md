@@ -6,6 +6,8 @@ instructions published by PromptWorks at https://www.promptworks.com/blog/buildi
 , which did a bit less than we're aiming for here, and were for an earlier version
 of React Native so could be a bit out of date.
 
+### Note that the current state is broken for some Objective-C chicanery. I'm working on figuring it out. 
+
 ## Instructions for iOS (work in progress)
 1. Create a React Native app, e.g.
   `react-native init MyReactNativeExampleBrowserExtension`
@@ -159,3 +161,80 @@ export default class ReactNativeExampleBrowserExtension extends Component {
 ```
 Now when you open the action extension, you'll see the `ActionExtensionScreen` component rendered.
 ![Custom RN Screen](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/4a%20-%20Custom%20RN%20screen.png)
+
+### Add a Done button to dismiss the extension
+To close the extension, the `done` method on `ActionViewController` must be called. Unfortunately
+this is in Objective-C, so we can't call it directly from JavaScript.  To enable this we
+will create a Native Module.
+
+This gets a bit hacky due to the fact that Action Extensions do not have access to the application
+context so we need to keep track of the ActionViewController ourselves.
+
+18. Update the `ActionViewController.h` file to expose a pointer to the view controller,
+and set that pointer when the view is loaded.  The new code looks like:
+
+```Objective-C
+#import <UIKit/UIKit.h>
+
+@interface ActionViewController : UIViewController
+
+- (void) done;
+
+extern ActionViewController * actionViewController;
+
+@end
+```
+
+19. Update `ActionViewContoller.m` to also include a pointer to `actionViewController`,
+and set the value of the pointer at the end of the `loadView` function.
+
+```Objective-C
+@interface ActionViewController ()
+
+@property(strong,nonatomic) IBOutlet UIImageView *imageView;
+
+@end
+
+ActionViewController * actionViewController = nil;
+
+@implementation ActionViewController
+
+- (void)loadView {
+  // All other existing code here....
+
+  // New code
+  actionViewController = self;
+}
+```
+
+20. Time to create the NativeModule!  Create a new file called `ActionExtension.h` in the same
+folder as `AppDelegate.m`.
+
+```Objective-C
+#import <React/RCTBridgeModule.h>
+
+@interface ActionExtension : NSObject <RCTBridgeModule>
+@end
+```
+
+Create a file called `ActionExtension.m` in the same folder.  You will be prompted to choose
+the targets that the file should be compiled for.  Make sure to select both the default one,
+`My Example Extension` and the main target, which should be the first in the list.
+```Objective-C
+#import "ActionExtension.h"
+#import "ActionViewController.h"
+
+@implementation ActionExtension
+
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(done) {
+  [actionViewController done];
+}
+
+@end
+```
+![Select target](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/4b%20-%20Add%20targets.png)
+
+### Note that at this point the project is broken and will fail to compile. I'm working on
+figuring out why.

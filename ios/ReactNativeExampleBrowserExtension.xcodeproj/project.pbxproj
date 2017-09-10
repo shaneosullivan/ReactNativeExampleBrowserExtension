@@ -37,6 +37,8 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		D6B0D08C1F6510A100718C33 /* ActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0D08B1F6510A100718C33 /* ActionExtension.m */; };
+		D6B0D08D1F6510A100718C33 /* ActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0D08B1F6510A100718C33 /* ActionExtension.m */; };
 		D6B96B871F6105A50032ACA5 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B96B861F6105A50032ACA5 /* ActionViewController.m */; };
 		D6B96B8A1F6105A50032ACA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B96B881F6105A50032ACA5 /* MainInterface.storyboard */; };
 		D6B96B8E1F6105A50032ACA5 /* My Example Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D6B96B831F6105A50032ACA5 /* My Example Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -335,6 +337,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		D6B0D08A1F65107900718C33 /* ActionExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ActionExtension.h; path = ReactNativeExampleBrowserExtension/ActionExtension.h; sourceTree = "<group>"; };
+		D6B0D08B1F6510A100718C33 /* ActionExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionExtension.m; path = ReactNativeExampleBrowserExtension/ActionExtension.m; sourceTree = "<group>"; };
 		D6B96B831F6105A50032ACA5 /* My Example Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "My Example Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B96B851F6105A50032ACA5 /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		D6B96B861F6105A50032ACA5 /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -503,6 +507,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				D6B0D08A1F65107900718C33 /* ActionExtension.h */,
+				D6B0D08B1F6510A100718C33 /* ActionExtension.m */,
 			);
 			name = ReactNativeExampleBrowserExtension;
 			sourceTree = "<group>";
@@ -1129,6 +1135,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				D6B0D08C1F6510A100718C33 /* ActionExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B96B871F6105A50032ACA5 /* ActionViewController.m in Sources */,
+				D6B0D08D1F6510A100718C33 /* ActionExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

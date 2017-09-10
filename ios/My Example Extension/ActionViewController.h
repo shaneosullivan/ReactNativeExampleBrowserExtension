@@ -10,4 +10,8 @@
 
 @interface ActionViewController : UIViewController
 
+- (void) done;
+
+extern ActionViewController * actionViewController;
+
 @end
