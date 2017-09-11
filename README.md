@@ -6,8 +6,6 @@ instructions published by PromptWorks at https://www.promptworks.com/blog/buildi
 , which did a bit less than we're aiming for here, and were for an earlier version
 of React Native so could be a bit out of date.
 
-### Note that the current state is broken for some Objective-C chicanery. I'm working on figuring it out.
-
 ## Instructions for iOS (work in progress)
 1. Create a React Native app, e.g.
   `react-native init MyReactNativeExampleBrowserExtension`
@@ -236,4 +234,38 @@ RCT_EXPORT_METHOD(done) {
 ```
 ![Select target](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/4b%20-%20Add%20targets.png)
 
-### Note that at this point the project is broken and will fail to compile. I'm working on figuring out why.
+To avoid compilation/linker issues, add `ActionViewController.m` to the `Compile Sources` list of the
+main project's `Build Phases` tab.
+![Select target](https://github.com/shaneosullivan/ReactNativeExampleBrowserExtension/blob/master/ReadmeMedia/4c%20-%20Add%20compile%20source.png)
+
+21. Update the `ActionExtensionScreen.js` file to contain a `Done` component, which when pressed
+activates the newly exposed `done()` function on the native module.
+
+```javascript
+// @flow
+
+import React from 'react';
+import { NativeModules, TouchableOpacity, Text, View } from 'react-native';
+
+export default class ActionExtensionScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ paddingTop: 100 }}>
+        <Text style={{ fontSize: 30, textAlign: 'center' }}>Hello from our Action Extension!</Text>
+        <View style={{ paddingTop: 100 }}>
+          <TouchableOpacity onPress={this._handleDone}>
+            <Text style={{ fontSize: 30, textAlign: 'center' }}>Done</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+
+  _handleDone = () => {
+    // Call the function that has been exposed on the native module to close the screen.
+    NativeModules.ActionExtension.done();
+  };
+}
+```
+Now run your app again with `react-native run-ios` and try opening the extension from a browser.
+Clicking the `Done` component should close the extension, taking you back to the browser!

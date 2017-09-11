@@ -10,9 +10,7 @@ export default class ActionExtensionScreen extends React.Component {
         <Text style={{ fontSize: 30, textAlign: 'center' }}>Hello from our Action Extension!</Text>
         <View style={{ paddingTop: 100 }}>
           <TouchableOpacity onPress={this._handleDone}>
-            <View>
-              <Text>Done</Text>
-            </View>
+            <Text style={{ fontSize: 30, textAlign: 'center' }}>Done</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -20,6 +18,7 @@ export default class ActionExtensionScreen extends React.Component {
   }
 
   _handleDone = () => {
+    // Call the function that has been exposed on the native module to close the screen.
     NativeModules.ActionExtension.done();
   };
 }

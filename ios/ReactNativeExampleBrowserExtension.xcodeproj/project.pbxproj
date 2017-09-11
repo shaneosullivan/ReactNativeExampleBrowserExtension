@@ -39,6 +39,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		D6B0D08C1F6510A100718C33 /* ActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0D08B1F6510A100718C33 /* ActionExtension.m */; };
 		D6B0D08D1F6510A100718C33 /* ActionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B0D08B1F6510A100718C33 /* ActionExtension.m */; };
+		D6B0D08E1F6643C900718C33 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B96B861F6105A50032ACA5 /* ActionViewController.m */; };
 		D6B96B871F6105A50032ACA5 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B96B861F6105A50032ACA5 /* ActionViewController.m */; };
 		D6B96B8A1F6105A50032ACA5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B96B881F6105A50032ACA5 /* MainInterface.storyboard */; };
 		D6B96B8E1F6105A50032ACA5 /* My Example Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D6B96B831F6105A50032ACA5 /* My Example Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -1133,6 +1134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B0D08E1F6643C900718C33 /* ActionViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				D6B0D08C1F6510A100718C33 /* ActionExtension.m in Sources */,
