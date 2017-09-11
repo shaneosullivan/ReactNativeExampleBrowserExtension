@@ -13,8 +13,6 @@
 
 @interface ActionViewController ()
 
-@property(strong,nonatomic) IBOutlet UIImageView *imageView;
-
 @end
 
 ActionViewController * actionViewController = nil;
