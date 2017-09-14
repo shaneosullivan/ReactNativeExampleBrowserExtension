@@ -4,22 +4,35 @@
  * @flow
  */
 
-import React, { Component, PropTypes } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, NativeModules, StyleSheet, Text, View } from 'react-native';
+import PropTypes from 'prop-types';
 import ActionExtensionScreen from './app/ActionExtensionScreen';
+
+// DEV hack
+NativeModules.DevSettings.setIsDebuggingRemotely(true);
 
 export default class ReactNativeExampleBrowserExtension extends Component {
   static propTypes = {
-    isActionExtension: PropTypes.bool
+    isActionExtension: PropTypes.number,
+    webUrl: PropTypes.string
   };
 
   static defaultProps = {
     isActionExtension: false
   };
 
+  componentDidUpdate() {
+    console.log('Update: Root got props', this.props);
+  }
+
+  componentDidMount() {
+    console.log('Mount: Root got props', this.props);
+  }
+
   render() {
     if (this.props.isActionExtension) {
-      return <ActionExtensionScreen />;
+      return <ActionExtensionScreen webUrl={this.props.webUrl} />;
     } else {
       return (
         <View style={styles.container}>
