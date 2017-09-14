@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <React/RCTRootView.h>
 
 @interface ActionViewController : UIViewController
 
+@property (nonatomic, strong) RCTRootView *reactView;
+@property (nonatomic, strong) NSString *domainUrl;
+
 - (void) done;
+- (NSString*) getDomainUrl;
 
 extern ActionViewController * actionViewController;
 

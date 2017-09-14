@@ -33,13 +33,38 @@ ActionViewController * actionViewController = nil;
                                                    launchOptions:nil];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
   self.view = rootView;
+  self.reactView = rootView;
   actionViewController = self;
+
+  [self initDomainUrl];
+}
+
+- (void)initDomainUrl {
+  NSArray *inputItems = self.extensionContext.inputItems;
+
+  NSExtensionItem *extensionItem = inputItems[0];
+  NSItemProvider *itemProvider = extensionItem.attachments[0];
+
+  // Do a lot of work to get the URL.
+  // Reference: http://www.pixeldock.com/blog/ios8-share-extension-completionhandler-for-loaditemfortypeidentifier-is-never-called/
+  if ([itemProvider hasItemConformingToTypeIdentifier:@"public.url"]) {
+    [itemProvider loadItemForTypeIdentifier:@"public.url"
+      options:nil
+      completionHandler:^(NSURL *url, NSError *error) {
+        NSString *urlString = url.absoluteString;
+        self.domainUrl = urlString;
+      }];
+  }
 }
 
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (NSString*)getDomainUrl {
+  return self.domainUrl;
 }
 
 - (IBAction)done {
