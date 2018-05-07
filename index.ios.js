@@ -8,8 +8,6 @@ import React, { Component, PropTypes } from 'react';
 import { AppRegistry, NativeModules, StyleSheet, Text, View } from 'react-native';
 import ActionExtensionScreen from './app/ActionExtensionScreen';
 
-NativeModules.DevSettings.setIsDebuggingRemotely(true);
-
 export default class ReactNativeExampleBrowserExtension extends Component {
   static propTypes = {
     isActionExtension: PropTypes.bool
