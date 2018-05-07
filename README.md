@@ -316,11 +316,11 @@ chmod +x scripts/copyJsBundle.sh
 23. Now you have to tell XCode to run this script after the main build has completed. This is done
     by editing the file `ios/<YOUR_PROJECT>.xcodeproj/project.pbxproj`, so in this case
     `ios/ReactNativeExampleBrowserExtension/project.pbxproj`. In this file, search for any instances of
-    `react-native-xcode.sh`, then edit that line to add `& ../scripts/copyJsBundle.sh`, so the line
+    `react-native-xcode.sh`, then edit that line to add `&& ../scripts/copyJsBundle.sh`, so the line
     should look like
 
 ```
-shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh & ../scripts/copyJsBundle.sh";
+shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh && ../scripts/copyJsBundle.sh";
 ```
 
 24. Switch both the main project's scheme and the extension project's scheme to Release mode
