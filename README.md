@@ -332,3 +332,20 @@ shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/rea
     tap your extension's icon. It should open up correctly and render the React Native UI! This
     also means it should be possible to actually package up your app and send it to Apple for entry
     in the app store.
+
+### Debugging your extension
+
+You'll notice that when you open your extension in the Simulator, you do not see logs show up
+in the XCode console. This is because XCode automatically attaches its debug session to the main
+app. The way to fix this is to attach the debug session to the app from which you'll open your
+extension, in this example it's Safari.
+
+26. Open the Scheme for your extension. Click the menu `Product/Scheme/Edit Scheme` and choose
+    your extension's project in the top left of the dialog that pops up. Choose `Run` on the left side
+    of the dialog. Change the `Executable` dropdown to `Ask on Launch`. Click the `Close` button.
+
+27. At the top of XCode, just to the right of the Stop button, choose your extension project to be
+    run. It was probably on your main app all along. Click the `Play` button to run it and you should
+    be prompted for the app to run it in the context of. Choose Safari. Now you should see all your
+    logs in the Console! If you do not see the Console at all, you can show it by going to the menu
+    `View/Debug Area/Activate Console`
